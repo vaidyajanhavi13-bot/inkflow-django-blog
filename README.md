@@ -24,8 +24,6 @@ A modern blogging platform built with <strong>Django</strong> where users can cr
 
 Deployment will be available soon.
 
-<br>
-
 ---
 
 <h2 id="features">Features</h2>
@@ -37,7 +35,6 @@ Deployment will be available soon.
 - User Logout
 - Secure Authentication using Django Authentication System
 
-<br>
 
 <h3>Blog Management</h3>
 
@@ -48,7 +45,6 @@ Deployment will be available soon.
 - Categorize Blogs
 - Rich Blog Detail Page
 
-<br>
 
 <h3>User Interaction</h3>
 
@@ -58,7 +54,6 @@ Deployment will be available soon.
 - Edit Comments Without Reload (AJAX)
 - Delete Own Comments
 
-<br>
 
 <h3>Search & Filter</h3>
 
@@ -66,7 +61,6 @@ Deployment will be available soon.
 - Search Blogs by Content
 - Filter Blogs by Category
 
-<br>
 
 <h3>Dashboard</h3>
 
@@ -75,13 +69,11 @@ Deployment will be available soon.
 - Total Likes
 - Total Comments
 
-<br>
 
 <h3>Popular Posts</h3>
 
 - Displays Top 3 Most Liked Blogs
 
-<br>
 
 <h3>Responsive Design</h3>
 
@@ -169,7 +161,6 @@ InkFlow/
 - Category filtering
 - Popular posts section
 
-<br>
 
 <h3>Blog Detail Page</h3>
 
@@ -181,7 +172,6 @@ InkFlow/
 - Inline Comment Editing
 - Responsive Layout
 
-<br>
 
 <h3>Dashboard</h3>
 
@@ -323,15 +313,12 @@ While building InkFlow, I gained practical experience with:
 
 <strong>Janhavi Vaidya</strong>
 
-<br><br>
-
 <strong>GitHub</strong>
 
-<a href=" https://github.com/vaidyajanhavi13-bot">
+<a href="https://github.com/vaidyajanhavi13-bot">
 https://github.com/vaidyajanhavi13-bot
 </a>
 
-<br><br>
 
 <strong>LinkedIn</strong>
 
