@@ -1,0 +1,26 @@
+{% extends "blogapp/base.html" %}
+
+{% block head %}
+  <title>Add page</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/add.css' %}">
+{% endblock %}
+
+{% block body %}
+
+  <div class="form-container">
+    <h1>Create New Blog</h1>
+      <a href="/list/" class="close-btn">&times;</a>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="submit-btn">
+            Publish Blog
+        </button>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color: rgb(244, 241, 238);
+}
+.form-container{
+    width:700px;
+    max-width:90%;
+    margin:50px auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    position: relative;
+    border: 2px solid #d9d9d9;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:20px;
+    text-decoration:none;
+    font-size:35px;
+    color:#666;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.form-container h1{
+    text-align:center;
+    color:#f19b07;
+    margin-bottom:35px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    margin-bottom:20px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+.submit-btn{
+    width:100%;
+    background:#f4b000;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    background:#d88900;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    outline:none;
+    border-color:#f4b000;
+    box-shadow:0 0 8px rgba(244,176,0,.3);
+}
+
+/* Laptop (1024px and below) */
+
+@media (max-width:1024px){
+
+    .form-container{
+        width:85%;
+        max-width:700px;
+        padding:35px;
+        margin:45px auto;
+    }
+
+    .form-container h1{
+        font-size:34px;
+    }
+
+    input,
+    textarea,
+    select{
+        font-size:15px;
+    }
+
+    .submit-btn{
+        font-size:17px;
+    }
+
+}
+
+
+/* Tablet (768px and below) */
+
+@media (max-width:768px){
+
+    .form-container{
+        width:90%;
+        max-width:600px;
+        padding:30px;
+        margin:30px auto;
+    }
+
+    .form-container h1{
+        font-size:30px;
+        margin-bottom:28px;
+    }
+
+    .close-btn{
+        top:12px;
+        right:16px;
+        font-size:30px;
+    }
+
+    input,
+    textarea,
+    select{
+        padding:12px;
+        font-size:15px;
+    }
+
+    textarea{
+        min-height:160px;
+    }
+
+    .submit-btn{
+        padding:13px;
+        font-size:16px;
+    }
+
+}
+
+/* Phone (480px and below) */
+@media (max-width:480px){
+
+    html,
+    body{
+        overflow-x:hidden;
+    }
+
+    .form-container{
+        width:calc(100% - 20px);
+        max-width:430px;
+        margin:10px auto;
+        padding:16px;
+        border-radius:12px;
+    }
+
+    .form-container h1{
+        font-size:22px;
+        margin-bottom:16px;
+    }
+
+    .close-btn{
+        top:8px;
+        right:12px;
+        font-size:24px;
+    }
+
+    .form-container p{
+        margin:0 0 12px;
+    }
+
+    input,
+    textarea,
+    select,
+    input[type="file"]{
+        width:100%;
+        max-width:100%;
+        padding:10px;
+        margin-top:6px;
+        margin-bottom:12px;
+        font-size:14px;
+    }
+
+    textarea{
+        min-height:110px;
+    }
+
+    .submit-btn{
+        padding:11px;
+        font-size:14px;
+    }
+}

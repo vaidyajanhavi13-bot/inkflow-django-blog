@@ -1,0 +1,110 @@
+
+{% extends "blogapp/base.html" %}
+
+{% block head %}
+  <title>List Page</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=5">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="{% static 'js/navbar.js' %}" defer></script>
+  <script src="{% static 'js/blogcard.js' %}" defer></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="header">
+    <h1>Ink<span>Flow</span></h1>
+    <div class="box">
+        <form method="GET" action="/list/" class="search-box">
+            <input type="text" name="search" placeholder="Search blogs...">
+            <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>    
+    </div>
+
+    <div class="header-right">
+        {% if user.is_authenticated %}
+        <div class="user-menu">
+            <button class="user-btn" id="userBtn">{{ user.username|title }}<i class="fa-solid fa-chevron-down"></i></button>
+
+                
+            <div class="dropdown-menu">
+                <a href="/dashboard/"><i class="fa-solid fa-table-columns"></i> Dashboard</a> 
+                <a href="/create/"><i class="fa-solid fa-plus"></i> New Post</a>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                     <button type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                </form>
+            </div>
+        </div>
+        {% else %}
+        <a href="/login/" class="btn">Login</a>
+        <a href="/register/" class="btn">Register</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="info">
+        <h2>Your Personal Space </h2>
+        <h4>Write, <i><span>Share</span></i>, <br> Inspire.</h4>
+        <h1>A beautiful place to put your thoughts, stories, and ideas into the world.</h1> 
+    </div>
+
+    <div class="categories">
+        <a href="/list/" class="cat-btn">All</a>
+        <a href="/list/?category=Technology" class="cat-btn">Technology</a>
+        <a href="/list/?category=Design" class="cat-btn">Design</a>
+        <a href="/list/?category=Lifestyle" class="cat-btn">Lifestyle</a>
+        <a href="/list/?category=Travel" class="cat-btn">Travel</a>
+        <a href="/list/?category=Food" class="cat-btn">Food</a>
+        <a href="/list/?category=Science" class="cat-btn">Science</a>
+    </div>
+
+    {% for x in data %}
+    <div class="posts">
+        <div class="blog-card" data-href="/detail/{{x.id}}/">
+            <div class="blog-image">
+                <img src="{{ x.blog_images.url }}" alt="{{ x.title }}">
+            </div>
+            <div class="blog-content">
+                <div class="blog-top">
+                    <span class="category">{{ x.category }}</span>
+                    <span class="date">{{ x.date|date:"M d, Y" }}</span>
+                </div>
+                <h2 class="blog-title">{{ x.title }}</h2>
+                <p class="blog-text">{{ x.body|truncatewords:25 }}</p>
+            </div>
+
+            <div class="blog-footer">
+                <span><i class="fa-solid fa-user"></i> {{ x.user }}</span>
+                {% if request.user == x.user %}
+                <div>
+                    <a href="/edit/{{x.id}}/" onclick="event.stopPropagation();">Edit</a>
+                    <a href="/delete/{{x.id}}/" onclick="event.stopPropagation();">Delete</a>
+                </div>
+                {% endif %}
+            </div>
+    
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="popular-posts">
+        <h2>POPULAR POSTS</h2>
+        {% for post in popular_posts %}
+        <div class="popular-item">
+            <div class="popular-number">
+                0{{ forloop.counter }}
+            </div>
+            <div class="popular-content">
+                <a href="/detail/{{ post.id }}/">{{ post.title }}</a>
+                <p>{{ post.date|date:"F d, Y" }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+  

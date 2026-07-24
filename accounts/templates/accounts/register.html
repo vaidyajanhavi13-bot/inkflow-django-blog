@@ -1,0 +1,60 @@
+{% extends "blogapp/base.html" %}
+
+{% block head %}
+<title>Register</title>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}?v=5">
+{% endblock %}
+
+{% block body %}
+
+<div class="register-container">
+
+    <h1>Create Account</h1>
+
+    <form method="POST">
+    {% csrf_token %}
+
+    <p class="subtitle">
+        Join InkFlow and start sharing your ideas.
+    </p>
+
+    <div class="form-group">
+        <label for="{{ form.username.id_for_label }}">Username</label>
+        {{ form.username }}
+        {{ form.username.errors }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Email</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.password1.id_for_label }}">Password</label>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+    </div>
+
+    <div class="form-group">
+        <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+    </div>
+
+    <button type="submit">
+        Register
+    </button>
+</form>
+
+    <p>
+        Already have an account?
+        <a href="/login/">Login</a>
+    </p>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "blogapp/base.html" %}
+
+{% block head %}
+<title>{{ data.title }}</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="{% static 'js/detail.js' %}" defer></script>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="blog-container">
+
+    <div class="hero">
+
+        <img src="{{ data.blog_images.url }}" alt="{{ data.title }}">
+
+        <div class="overlay"></div>
+
+        <a href="/list/" class="close-btn">&times;</a>
+
+        <div class="hero-content">
+            <span class="badge">{{ data.category }}</span>
+            <h1>{{ data.title }}</h1>
+            <p>{{ data.date|date:"F d, Y" }}</p>
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <div class="author">
+            <i class="fa-solid fa-user"></i>
+            <span>{{ data.user }}</span>
+        </div>
+
+        <div class="blog-text">
+            {{ data.body|linebreaks }}
+        </div>
+
+        <div class="actions">
+            
+            <button class="like-btn"  id="like-btn" onclick="likeBlog('{{ data.id }}')">
+                <i id="heart-icon" class="{% if user in data.liked_by.all %}fa-solid{% else %}fa-regular{% endif %} fa-heart"></i>
+                <span id="like-count">
+                    {{ data.likes_count }}
+                </span>
+            </button>
+
+            {% if request.user == data.user %}
+            <div class="right-buttons">
+                <a href="/edit/{{data.id}}/" class="edit-btn">Edit</a>
+                <a href="/delete/{{data.id}}/" class="delete-btn">Delete</a>
+            </div>
+            {% endif %}
+
+        </div><hr>
+
+        <h2>Comments ({{ comments|length }})</h2>
+
+        {% for c in comments %}
+        <div class="comment-card" id="comment{{ c.id }}">
+            <div class="comment-left">
+                <h4>{{ c.user.username }}</h4>
+                <p id="text{{ c.id }}">{{ c.text }}</p>
+                <textarea id="textarea{{ c.id }}" class="edit-box" style="display:none;">{{ c.text }}</textarea>
+            </div>
+
+             {% if request.user == c.user %}
+             <div class="comment-right">
+            <button class="edit-btn" id="edit{{ c.id }}" onclick="editComment('{{ c.id }}')">
+                Edit
+            </button>
+
+            <button class="comment-save-btn" id="save{{ c.id }}" onclick="saveComment('{{ c.id }}')" style="display:none;">
+                Save
+            </button>
+
+            <button class="comment-cancel-btn" id="cancel{{ c.id }}" onclick="cancelEdit('{{ c.id }}')" style="display:none;">
+                Cancel
+            </button>
+
+             <a href="{% url 'delete_comment' c.id %}" class="comment-delete-btn">
+                Delete
+            </a>
+        </div>
+        {% endif %}
+
+    </div>
+    {% empty %}
+
+    <p>No comments yet. Be the first!</p>
+    {% endfor %}
+
+    <div class="comment-form">
+        <h3>Leave a Comment</h3>
+
+        <form method="POST">
+            {% csrf_token %}   
+            <textarea name="text" placeholder="Share your thoughts..." required></textarea>
+
+            <button type="submit">
+                Post Comment
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}
