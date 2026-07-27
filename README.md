@@ -316,7 +316,7 @@ While building InkFlow, I gained practical experience with:
 <a href="https://github.com/vaidyajanhavi13-bot">
 GitHub Profile
 </a>
-
+<br>
 <a href="https://www.linkedin.com/in/janhavi-vaidya-79b8b4333/">
 LinkedIn Profile
 </a>
