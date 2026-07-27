@@ -313,17 +313,12 @@ While building InkFlow, I gained practical experience with:
 
 <strong>Janhavi Vaidya</strong>
 
-<strong>GitHub</strong>
-
 <a href="https://github.com/vaidyajanhavi13-bot">
-https://github.com/vaidyajanhavi13-bot
+GitHub Profile
 </a>
 
-
-<strong>LinkedIn</strong>
-
 <a href="https://www.linkedin.com/in/janhavi-vaidya-79b8b4333/">
-https://www.linkedin.com/in/janhavi-vaidya-79b8b4333/
+LinkedIn Profile
 </a>
 
 ---
