@@ -1,8 +1,6 @@
 <h1 align="center">✍️ InkFlow</h1>
 
-<p align="center">
-A modern blogging platform built with <strong>Django</strong> where users can create, manage, and interact with blog posts through likes and comments.
-</p>
+<p align="center"> A modern full-stack blogging platform built with <strong>Django</strong> featuring user authentication, blog management, likes, comments, responsive design, Cloudinary media storage, and Render deployment. </p>
 
 <h2>📌 Table of Contents</h2>
 <p align="center">
@@ -20,9 +18,10 @@ A modern blogging platform built with <strong>Django</strong> where users can cr
 
 <h2 id="live-demo">🌐 Live Demo</h2>
 
-<strong>Coming Soon</strong>
+https://inkflow-django-blog.onrender.com
 
-Deployment will be available soon.
+**Note:** The application is hosted on Render’s free tier, so the first load may take **30–60 seconds** while the server wakes up.
+
 
 ---
 
@@ -99,14 +98,17 @@ Deployment will be available soon.
 
 ### Database
 
-- SQLite
+- PostgreSQL (Production)
+- SQLite (Local Development)
 
 ### Other Technologies
 
+- Cloudinary (Cloud Image Storage)
 - Django Authentication
 - AJAX (Fetch API)
 - Font Awesome
 - Google Fonts (Poppins)
+- Render (Deployment)
 
 ---
 
@@ -243,7 +245,7 @@ git clone https://github.com/vaidyajanhavi13-bot/inkflow-django-blog.git
 <h3>2. Navigate to the Project Folder</h3>
 
 ```bash
-cd InkFlow
+cd inkflow-django-blog
 ```
 
 <h3>3. Create a Virtual Environment</h3>
@@ -302,10 +304,15 @@ While building InkFlow, I gained practical experience with:
 - Model Relationships
 - AJAX using Fetch API
 - Responsive Web Design
+- Cloudinary Media Storage
+- PostgreSQL Integration
 - Media File Uploads
 - Search and Filtering
 - Dashboard Development
+- Environment Variable Management
 - Git & GitHub
+- Deploying Django Applications on Render
+
 
 ---
 
