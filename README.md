@@ -20,7 +20,7 @@
 
 https://inkflow-django-blog.onrender.com
 
-**Note:** The application is hosted on Render’s free tier, so the first load may take **30–60 seconds** while the server wakes up.
+**Note:** The application is hosted on Render’s free tier, so the first load may take **30–60 seconds** while the server wakes up.The production PostgreSQL database is hosted on Neon.
 
 
 ---
@@ -98,11 +98,12 @@ https://inkflow-django-blog.onrender.com
 
 ### Database
 
-- PostgreSQL (Production)
+- Neon PostgreSQL – Production database (managed PostgreSQL)
 - SQLite (Local Development)
 
 ### Other Technologies
 
+- Neon (Managed PostgreSQL Database)
 - Cloudinary (Cloud Image Storage)
 - Django Authentication
 - AJAX (Fetch API)
@@ -311,6 +312,8 @@ While building InkFlow, I gained practical experience with:
 - Dashboard Development
 - Environment Variable Management
 - Git & GitHub
+- Neon PostgreSQL Database Integration
+- Connecting Django Applications to Cloud-Hosted Databases
 - Deploying Django Applications on Render
 
 
@@ -324,8 +327,6 @@ While building InkFlow, I gained practical experience with:
 GitHub Profile
 </a>
 <br>
-<a href="https://www.linkedin.com/in/janhavi-vaidya-79b8b4333/">
-LinkedIn Profile
-</a>
+
 
 ---
